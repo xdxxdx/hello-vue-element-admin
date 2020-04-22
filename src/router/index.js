@@ -11,7 +11,13 @@ import componentsRouter from './modules/components'
 import chartsRouter from './modules/charts'
 import tableRouter from './modules/table'
 import nestedRouter from './modules/nested'
-
+import adminRouter from './modules/admin'
+import memberRouter from './modules/member'
+import commodityRouter from './modules/commodity'
+import CarouselRouter from './modules/carousel'
+import DictionaryRouter from './modules/dictionary'
+import NewsRouter from './modules/news'
+import AgencyRouter from './modules/agency'
 /**
  * Note: sub-menu only appear when route children.length >= 1
  * Detail see: https://panjiachen.github.io/vue-element-admin-site/guide/essentials/router-and-nav.html
@@ -78,8 +84,8 @@ export const constantRoutes = [
       {
         path: 'dashboard',
         component: () => import('@/views/dashboard/index'),
-        name: 'Dashboard',
-        meta: { title: 'Dashboard', icon: 'dashboard', affix: true }
+        name: '首页',
+        meta: { title: '首页', icon: 'dashboard', affix: true }
       }
     ]
   },
@@ -129,6 +135,14 @@ export const constantRoutes = [
  * the routes that need to be dynamically loaded based on user roles
  */
 export const asyncRoutes = [
+  /** when your routing map is too long, you can split it into small modules **/
+  adminRouter,
+  DictionaryRouter,
+  memberRouter,
+  commodityRouter,
+  CarouselRouter,
+  NewsRouter,
+  AgencyRouter,
   {
     path: '/permission',
     component: Layout,
